@@ -136,7 +136,7 @@ def remove_user(message):
 @bot.message_handler(commands=['clearlogs'])
 def clear_logs_command(message):
     user_id = str(message.chat.id)
-    if user_id in INSANE PAPA_id:
+    if user_id in user_id:
         try:
             with open(LOG_FILE, "r+") as file:
                 log_content = file.read()
@@ -156,7 +156,7 @@ def clear_logs_command(message):
 @bot.message_handler(commands=['allusers'])
 def show_all_users(message):
     user_id = str(message.chat.id)
-    if user_id in INSANE PAPA_id:
+    if user_id in user_id:
         try:
             with open(USER_FILE, "r") as file:
                 user_ids = file.read().splitlines()
@@ -181,7 +181,7 @@ def show_all_users(message):
 @bot.message_handler(commands=['logs'])
 def show_recent_logs(message):
     user_id = str(message.chat.id)
-    if user_id in INSANE PAPA_id:
+    if user_id in user_id:
         if os.path.exists(LOG_FILE) and os.stat(LOG_FILE).st_size > 0:
             try:
                 with open(LOG_FILE, "rb") as file:
@@ -222,8 +222,8 @@ bgmi_cooldown = {}
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
-        # Check cooldown for non-INSANE PAPAs
-        if user_id not in INSANE PAPA_id:
+        # Check cooldown for non-admins
+        if user_id not in user_id:
             if user_id in bgmi_cooldown:
                 time_since_last_attack = (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds
                 if time_since_last_attack < 300:
@@ -358,7 +358,7 @@ By INSANEPAPA
 @bot.message_handler(commands=['broadcast'])
 def broadcast_message(message):
     user_id = str(message.chat.id)
-    if user_id in INSANE PAPA_id:
+    if user_id in user_id:
         command = message.text.split(maxsplit=1)
         if len(command) > 1:
             message_to_broadcast = "Message To All Users By INSANE PAPA:\n\n" + command[1]
