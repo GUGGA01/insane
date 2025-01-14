@@ -112,7 +112,7 @@ def add_user(message):
 @bot.message_handler(commands=['remove'])
 def remove_user(message):
     user_id = str(message.chat.id)
-    if user_id in INSANE PAPA_id:
+    if user_id in user_id:
         command = message.text.split()
         if len(command) > 1:
             user_to_remove = command[1]
